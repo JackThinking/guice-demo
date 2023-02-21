@@ -72,7 +72,6 @@ public class AppModule extends AbstractModule {
     }
 
     @Provides
-    @Name("okk")
     public List<NamedService> getAllItemServices(@Named("impl1") NamedService nameService1,
                                                  @Named("impl2") NamedService nameService2) {
         return of(nameService1, nameService2);
