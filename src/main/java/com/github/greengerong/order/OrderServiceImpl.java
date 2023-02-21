@@ -28,16 +28,16 @@ public class OrderServiceImpl implements OrderService {
 
     private PriceService priceService;
 
-    @Named("okk")
-    private  List<NamedService> namedServices;
+    private List<NamedService> namedServices;
 
     public OrderServiceImpl() {
     }
 
     @Inject
-    public OrderServiceImpl(Set<ItemService> itemServices, PriceService priceService) {
+    public OrderServiceImpl(Set<ItemService> itemServices, PriceService priceService, List<NamedService> namedServices) {
         this.itemServices = itemServices;
         this.priceService = priceService;
+        this.namedServices = namedServices;
     }
 
     @Override
@@ -66,5 +66,9 @@ public class OrderServiceImpl implements OrderService {
 
     public PriceService getPriceService() {
         return priceService;
+    }
+
+    public List<NamedService> getNamedServices() {
+        return namedServices;
     }
 }

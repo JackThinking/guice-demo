@@ -50,6 +50,8 @@ public class AppModuleTest {
         assertThat(itemServices.get(2), is(instanceOf(ItemServiceImpl3.class)));
         assertThat(((OrderServiceImpl) instance).getPriceService(), is(instanceOf(PriceService.class)));
         instance.add(new Order(100));
+        final List<NamedService> namedServices = Lists.newArrayList(((OrderServiceImpl) instance).getNamedServices());
+        assertThat(namedServices.size(), is(2));
     }
 
     @Test
