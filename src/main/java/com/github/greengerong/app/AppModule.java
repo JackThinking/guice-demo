@@ -3,6 +3,7 @@ package com.github.greengerong.app;
 import com.github.greengerong.item.ItemService;
 import com.github.greengerong.item.ItemServiceImpl1;
 import com.github.greengerong.item.ItemServiceImpl2;
+import com.github.greengerong.item.ItemServiceImpl3;
 import com.github.greengerong.named.NamedService;
 import com.github.greengerong.named.NamedServiceImpl1;
 import com.github.greengerong.named.NamedServiceImpl2;
@@ -59,6 +60,7 @@ public class AppModule extends AbstractModule {
         final Multibinder<ItemService> itemServiceMultibinder = Multibinder.newSetBinder(binder, ItemService.class);
         itemServiceMultibinder.addBinding().to(ItemServiceImpl1.class);
         itemServiceMultibinder.addBinding().to(ItemServiceImpl2.class);
+        itemServiceMultibinder.addBinding().to(ItemServiceImpl3.class);
 
         //TODO: bind instance not class.
         binder.bind(RuntimeService.class).toInstance(runtimeService);
