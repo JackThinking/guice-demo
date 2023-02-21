@@ -5,6 +5,7 @@ import com.google.inject.name.Names;
 
 public class ConcertModuleV2 extends AbstractModule {
     protected void configure() {
+        // 通过字符串映射到基础类型
         bindConstant().annotatedWith(Names.named("capacity")).to("322");
         // 通过类路径绑定类名
         bindConstant().annotatedWith(Names.named("stage")).to("com.github.greengerong.juice.V4.Actor");
