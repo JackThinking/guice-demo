@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
  * ****************************************
  */
 public class ItemServiceImpl2 implements ItemService {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ItemServiceImpl1.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ItemServiceImpl2.class);
 
     @Override
     public Item get(int id) {
