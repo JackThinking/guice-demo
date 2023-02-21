@@ -62,9 +62,10 @@ public class AppModuleTest {
                 })
         );
         //then
-        assertThat(instance.size(), is(2));
+        assertThat(instance.size(), is(3));
         assertThat(instance.get(0), is(instanceOf(ItemServiceImpl1.class)));
         assertThat(instance.get(1), is(instanceOf(ItemServiceImpl2.class)));
+        assertThat(instance.get(2), is(instanceOf(ItemServiceImpl3.class)));
     }
 
     @Test

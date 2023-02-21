@@ -3,6 +3,7 @@ package com.github.greengerong.order;
 import com.github.greengerong.item.ItemService;
 import com.github.greengerong.price.PriceService;
 import com.google.inject.Inject;
+import com.google.inject.name.Named;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,7 +21,9 @@ import java.util.Set;
  */
 public class OrderServiceImpl implements OrderService {
     private static final Logger LOGGER = LoggerFactory.getLogger(OrderServiceImpl.class);
+
     private Set<ItemService> itemServices;
+
     private PriceService priceService;
 
     public OrderServiceImpl() {
