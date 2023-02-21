@@ -17,6 +17,7 @@ import com.google.inject.*;
 import com.google.inject.multibindings.Multibinder;
 import com.google.inject.name.Named;
 import com.google.inject.name.Names;
+import jdk.jfr.Name;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -71,6 +72,7 @@ public class AppModule extends AbstractModule {
     }
 
     @Provides
+    @Name("okk")
     public List<NamedService> getAllItemServices(@Named("impl1") NamedService nameService1,
                                                  @Named("impl2") NamedService nameService2) {
         return of(nameService1, nameService2);
