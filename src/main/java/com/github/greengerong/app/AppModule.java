@@ -13,6 +13,7 @@ import com.github.greengerong.price.PriceService;
 import com.github.greengerong.runtime.RuntimeService;
 import com.github.greengerong.runtime.RuntimeServiceImpl;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import com.google.inject.*;
 import com.google.inject.multibindings.Multibinder;
 import com.google.inject.name.Named;
@@ -22,6 +23,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import java.util.Set;
 
 import static com.github.greengerong.app.ExceptionMethodInterceptor.exception;
 import static com.google.common.collect.ImmutableList.of;
@@ -57,7 +59,13 @@ public class AppModule extends AbstractModule {
         //TODO: bind self class(without interface or base class)
         binder.bind(PriceService.class).in(Scopes.SINGLETON);
 
-        //TODO: Multibinder
+
+        //TODO: Multibinder1
+        binder.bind(ItemService.class).annotatedWith(Names.named("1")).to(ItemServiceImpl1.class);
+        binder.bind(ItemService.class).annotatedWith(Names.named("2")).to(ItemServiceImpl2.class);
+        binder.bind(ItemService.class).annotatedWith(Names.named("3")).to(ItemServiceImpl3.class);
+
+        //TODO: Multibinder2
         final Multibinder<ItemService> itemServiceMultibinder = Multibinder.newSetBinder(binder, ItemService.class);
         itemServiceMultibinder.addBinding().to(ItemServiceImpl1.class);
         itemServiceMultibinder.addBinding().to(ItemServiceImpl2.class);
@@ -72,8 +80,15 @@ public class AppModule extends AbstractModule {
     }
 
     @Provides
-    public List<NamedService> getAllItemServices(@Named("impl1") NamedService nameService1,
-                                                 @Named("impl2") NamedService nameService2) {
+    @Singleton
+    @Named("kkv")
+    public Set<ItemService> getAllNameServices(@Named("1") ItemService itemService1, @Named("2") ItemService itemService2, @Named("3") ItemService itemService3) {
+        return ImmutableSet.of(itemService1, itemService2, itemService3);
+    }
+
+    @Provides
+    @Singleton
+    public List<NamedService> getAllItemServices(@Named("impl1") NamedService nameService1, @Named("impl2") NamedService nameService2) {
         return of(nameService1, nameService2);
     }
 

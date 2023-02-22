@@ -34,7 +34,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Inject
-    public OrderServiceImpl(Set<ItemService> itemServices, PriceService priceService, List<NamedService> namedServices) {
+    public OrderServiceImpl(@Named("kkv") Set<ItemService> itemServices, PriceService priceService, List<NamedService> namedServices) {
         this.itemServices = itemServices;
         this.priceService = priceService;
         this.namedServices = namedServices;
