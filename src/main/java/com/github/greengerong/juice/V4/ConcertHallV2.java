@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
 public class ConcertHallV2 {
+
   private int capacity;
 
   @Inject

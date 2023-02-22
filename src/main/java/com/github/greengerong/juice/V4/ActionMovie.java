@@ -4,7 +4,8 @@ import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
 public class ActionMovie {
-    @Inject
-    @Named("stallone")
-    private Actor actor;
+
+  @Inject
+  @Named("stallone")
+  private Actor actor;
 }

@@ -3,6 +3,7 @@ package com.github.greengerong.juice.V2;
 import javax.inject.Inject;
 
 public class Chef {
+
   private final FortuneService fortuneService;
 
   @Inject

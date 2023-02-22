@@ -5,6 +5,7 @@ import com.google.inject.Scopes;
 import com.google.inject.Singleton;
 
 public class ScopedModule extends AbstractModule {
+
   protected void configure() {
     bind(FortuneService.class).to(FortuneServiceImpl.class).in(Singleton.class);
     bind(FortuneService.class)

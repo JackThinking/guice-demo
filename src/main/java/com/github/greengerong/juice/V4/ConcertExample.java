@@ -4,6 +4,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 public class ConcertExample {
+
   public static void main(String[] args) {
     Injector i = Guice.createInjector(new ConcertModule());
     ConcertHall hall = i.getInstance(ConcertHall.class);

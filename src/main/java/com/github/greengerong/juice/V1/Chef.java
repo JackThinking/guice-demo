@@ -1,6 +1,7 @@
 package com.github.greengerong.juice.V1;
 
 public class Chef {
+
   private FortuneService fortuneService;
 
   public Chef() {

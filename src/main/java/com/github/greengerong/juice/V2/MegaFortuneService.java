@@ -1,8 +1,6 @@
 package com.github.greengerong.juice.V2;
 
 import com.google.inject.Inject;
-
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 

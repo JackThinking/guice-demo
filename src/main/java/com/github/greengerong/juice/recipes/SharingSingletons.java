@@ -5,13 +5,20 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Singleton;
 
-interface Drinkable {}
+interface Drinkable {
 
-interface Carbonated {}
+}
 
-class Water implements Drinkable, Carbonated {}
+interface Carbonated {
+
+}
+
+class Water implements Drinkable, Carbonated {
+
+}
 
 public class SharingSingletons {
+
   public static void main(String[] args) {
     Injector i =
         Guice.createInjector(
