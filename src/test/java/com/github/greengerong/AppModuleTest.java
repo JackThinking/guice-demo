@@ -59,10 +59,8 @@ public class AppModuleTest {
         //given
 
         //when
-        final List<ItemService> instance = Lists.newArrayList(
-                injector.getInstance(new Key<Set<ItemService>>() {
-                })
-        );
+        final List<ItemService> instance = Lists.newArrayList(injector.getInstance(new Key<Set<ItemService>>() {
+        }));
         //then
         assertThat(instance.size(), is(3));
         assertThat(instance.get(0), is(instanceOf(ItemServiceImpl1.class)));
